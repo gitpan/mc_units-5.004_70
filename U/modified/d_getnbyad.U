@@ -1,0 +1,19 @@
+?RCS: $Id: d_getnbyad.U,v $
+?MAKE:d_getnbyaddr: Inlibc
+?MAKE:	-pick add $@ %<
+?S:d_getnbyaddr:
+?S:	This variable conditionally defines the HAS_GETNETBYADDR symbol, which
+?S:	indicates to the C program that the getnetbyaddr() routine is available
+?S:	to look up networks by their IP addresses.
+?S:.
+?C:HAS_GETNETBYADDR:
+?C:	This symbol, if defined, indicates that the getnetbyaddr() routine is
+?C:	available to look up networks by their IP addresses.
+?C:.
+?H:#$d_getnbyaddr HAS_GETNETBYADDR		/**/
+?H:.
+?LINT:set d_getnbyaddr
+: see if getnetbyaddr exists
+set getnetbyaddr d_getnbyaddr
+eval $inlibc
+
